@@ -140,7 +140,7 @@ public class App
     		XPathExpression expr = null;
     		Object result = null;
     		NodeList list = null;
-        	for (int i = 0; i < uris && i < maxUris.length; i++) {
+        	for (int i = 0; i < uris.length && i < maxUris; i++) {
         		String organization = null, organization2 = null;
         		String baUri = uris[i].substring(2);	
         		System.out.println(baUri);
