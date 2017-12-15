@@ -140,7 +140,9 @@ public class App
     		XPathExpression expr = null;
     		Object result = null;
     		NodeList list = null;
-        	for (int i = 0; i < uris.length && i < maxUris; i++) {
+        	for (int i = 0; i < uris.length/* && i < maxUris*/; i++) {
+        		/*if (!uris[i].equals("d:2cd5f473f94f409eb7d4014f9b89c7ab"))
+        			continue;*/
         		String organization = null, organization2 = null;
         		String baUri = uris[i].substring(2);	
         		System.out.println(baUri);
@@ -254,6 +256,7 @@ public class App
         				indiv.getResources("v-s:created"));
         			
         			indiv.setProperty("v-s:sender", new Resource(correspondent_organization.getUri(), Type._Uri));
+        			veda.putIndividual(indiv, true, 0);
         			veda.putIndividual(correspondent_organization, true, 0);
         		}
         		
@@ -285,6 +288,7 @@ public class App
         				indiv.getResources("v-s:created"));
         			
         			indiv.addProperty("v-s:recipient", new Resource(correspondent_organization.getUri(), Type._Uri));
+        			veda.putIndividual(indiv, true, 0);
         			veda.putIndividual(correspondent_organization, true, 0);
         		}
         		
